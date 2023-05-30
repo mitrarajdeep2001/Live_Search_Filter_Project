@@ -78,17 +78,17 @@ li{
 /* CSS for Search List Container */
 .searched-list-container{
   padding: 2rem;
-  /* height: 40rem; */
+  height: 40rem;
   overflow-y: auto;
 }
 
-/* .user-list{
+#user-list{
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
-.user-data{
+#user-data{
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -98,21 +98,25 @@ li{
   border-radius: 1rem;
 }
 
-.user-data img{
+#user-data img{
   max-width: 100%;
-  height: auto;
   width: 6rem;
+  height: auto;
   border-radius: 50%;
 }
 
-.user-data div{
+#user-data div{
   text-align: start;
+  display: flex;
+  flex-direction: column;
+
 }
 
-.user-data p{
+
+#user-data div p{
   text-transform: capitalize;
 }
 
 .hide{
   display: none;
-} */
+}
