@@ -30,20 +30,30 @@ getUserData();
 
 // Get searched user data
 const getSearchedUserData = (data) => {
-  searchBox.addEventListener("input", function () {
-    userList.innerHTML = "";
-    data.forEach((e) => {
-        if (e.login.toLowerCase().includes(this.value.toLowerCase())) {
-        userList.innerHTML += ` <li>
-                <div id="user-data">
-                    <img src="${e.avatar_url}" alt="profile_pic">
-                    <div>
-                    <p>${e.login}</p>
-                    <a href="${e.html_url}" target="_blank">${e.html_url}</a>
-                    </div>
-                </div>
-            </li>`;
-      }
-    });
-  });
+  const optimisedFunction = myDebounce(data, 400)
+  searchBox.addEventListener("input", optimisedFunction);
 };
+
+// Debounce function for search results
+function myDebounce(data, delay) {
+  let timer;
+  return function () {
+    clearTimeout(timer)
+    timer = setTimeout(() => {
+      userList.innerHTML = "";
+      data.forEach((e) => {
+          if (e.login.toLowerCase().includes(this.value.toLowerCase())) {
+          userList.innerHTML += ` <li>
+                  <div id="user-data">
+                      <img src="${e.avatar_url}" alt="profile_pic">
+                      <div>
+                      <p>${e.login}</p>
+                      <a href="${e.html_url}" target="_blank">${e.html_url}</a>
+                      </div>
+                  </div>
+              </li>`;
+        }
+      });
+    }, delay)
+  }
+}
