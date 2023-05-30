@@ -1,1 +1,1 @@
-This is a live search filter mini project where user can search in the list of 30 world's best developers.
+This is a live search filter mini project where user can search in the list of 30 world's best developers. Here, I have implemented debounce concept to reduce the no. of function call while searching by developers name.
