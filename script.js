@@ -33,7 +33,7 @@ const getSearchedUserData = (data) => {
   searchBox.addEventListener("input", function () {
     userList.innerHTML = "";
     data.forEach((e) => {
-      if (e.login.includes(this.value.toLowerCase())) {
+        if (e.login.toLowerCase().includes(this.value.toLowerCase())) {
         userList.innerHTML += ` <li>
                 <div id="user-data">
                     <img src="${e.avatar_url}" alt="profile_pic">
